@@ -1,13 +1,16 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-void main() {
-  //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-  // to see how IntelliJ IDEA suggests fixing it.
-  IO.println(String.format("Hello and welcome!"));
-
-  for (int i = 1; i <= 5; i++) {
-    //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-    // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-    IO.println("i = " + i);
-  }
+public class Main{
+    public static void main(String[] args){
+        System.out.println("=== Small Graph (10 vertices) ===");
+        Graph small = new Graph();
+        for (int i = 0; i < 10; i++) small.addVertex(new Vertex(i));
+        for (int i = 0; i < 9; i++) small.addEdge(i, i + 1);
+        small.addEdge(0, 5);
+        small.addEdge(2, 7);
+        small.printGraph();
+        small.bfs(0);
+        small.dfs(0);
+        System.out.println("\n=== Performance Experiments ===");
+        Experiment exp = new Experiment();
+        exp.printResults();
+    }
 }
